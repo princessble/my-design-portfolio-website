@@ -1,6 +1,4 @@
-// ================================
-// 1) Mobile Hamburger Menu Toggle
-// ================================
+// 1) Mobile menu
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
@@ -9,7 +7,6 @@ menuBtn.addEventListener("click", () => {
   menuBtn.setAttribute("aria-expanded", String(isOpen));
 });
 
-// Close menu when a link is clicked (mobile)
 document.querySelectorAll(".nav__link").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("open");
@@ -17,9 +14,7 @@ document.querySelectorAll(".nav__link").forEach(link => {
   });
 });
 
-// ================================
-// 2) Active Link Highlight on Scroll
-// ================================
+// 2) Active nav highlight
 const sections = document.querySelectorAll("main section[id]");
 const navItems = document.querySelectorAll(".nav__link");
 
@@ -35,20 +30,16 @@ function setActiveLink() {
     if (a.getAttribute("href") === `#${current}`) a.classList.add("active");
   });
 }
-
 window.addEventListener("scroll", setActiveLink);
 setActiveLink();
 
-// ================================
-// 3) Contact Form (Front-end Demo)
-// ================================
+// 3) Contact form demo
 const form = document.getElementById("contactForm");
 const note = document.getElementById("formNote");
 
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-
     const name = form.elements["name"].value.trim();
     const email = form.elements["email"].value.trim();
     const message = form.elements["message"].value.trim();
@@ -63,14 +54,10 @@ if (form) {
   });
 }
 
-// ================================
-// 4) Footer Year
-// ================================
+// 4) Footer year
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// ================================
-// 5) Back to Top Button
-// ================================
+// 5) Back-to-top (improved)
 const backToTop = document.getElementById("backToTop");
 
 function toggleBackToTop(){
@@ -80,13 +67,12 @@ function toggleBackToTop(){
 window.addEventListener("scroll", toggleBackToTop);
 toggleBackToTop();
 
-backToTop.addEventListener("click", () => {
+// use pointerdown for better mobile response
+backToTop.addEventListener("pointerdown", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-// ================================
-// 6) Light/Dark Theme Toggle (saved)
-// ================================
+// 6) Theme toggle (saved)
 const themeToggle = document.getElementById("themeToggle");
 const themeText = document.getElementById("themeText");
 
@@ -107,9 +93,7 @@ themeToggle.addEventListener("click", () => {
   setTheme(isLight ? "dark" : "light");
 });
 
-// ================================
-// 7) Project Filters
-// ================================
+// 7) Project filters
 const filterButtons = document.querySelectorAll(".filter-btn");
 const projectCards = document.querySelectorAll(".project-card");
 
@@ -122,18 +106,12 @@ filterButtons.forEach(btn => {
 
     projectCards.forEach(card => {
       const category = card.dataset.category;
-      if (filter === "all" || category === filter) {
-        card.style.display = "block";
-      } else {
-        card.style.display = "none";
-      }
+      card.style.display = (filter === "all" || category === filter) ? "block" : "none";
     });
   });
 });
 
-// ================================
-// 8) Gallery Modal Pop-up
-// ================================
+// 8) Gallery modal
 const modal = document.getElementById("imgModal");
 const modalImage = document.getElementById("modalImage");
 const modalCaption = document.getElementById("modalCaption");
@@ -156,26 +134,18 @@ function closeModal(){
 }
 
 modalClose.addEventListener("click", closeModal);
-
-// close modal when clicking outside image box
-modal.addEventListener("click", (e) => {
-  if (e.target === modal) closeModal();
-});
-
-// close modal with ESC key
+modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
 });
 
-// ================================
-// 9) Typing Animation (Hero)
-// ================================
+// 9) Typing animation
 const typingEl = document.getElementById("typingText");
 const phrases = [
   "a Design & Web Professional.",
-  "a Creative Content Designer.",
-  "a Web Design Learner.",
-  "a Digital Marketing Trainee."
+  "a Web Developer (Projects on GitHub).",
+  "an RPA Learner & Builder.",
+  "a Creative Content Designer."
 ];
 
 let phraseIndex = 0;
