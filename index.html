@@ -1,72 +1,463 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Blessing Fortune Kwomo">
-    <meta name="keywords" content="HTML, CSS, JavaScript">
-    <meta name="description" content="my personal website website">
-    <title>Blessing Fortune Kwomo | Portfolio</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="https://fonts.googleapis.com/css2?family=inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Blessing Fortune Kwomo — Design & Web Portfolio" />
+  <title>Blessing Fortune Kwomo | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css"/>
 </head>
+
 <body>
- <!-- skip link accessibility-->
+  <!-- Skip link (accessibility) -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!--HEADER-->
+  <!-- HEADER -->
   <header class="header" id="top">
     <div class="container header__inner">
-        <a class="logo" href="#top" aria-label="Go to top/Home">
-            <span class="logo__mark">BFK</span>
-            <span class="logo__text">Blessing Fortune Kwomo</span>
-        </a>
-        <!--Hamburger menu button-->
-        <button class="menu-btn" id="menuBtn"
-        aria-label="Open navigation menu"
-        aria-controls="navLinks"
-        aria-expanded="false">
+      <a class="logo" href="#top" aria-label="Go to top">
+        <span class="logo__mark">BFK</span>
+        <span class="logo__text">Blessing Fortune Kwomo</span>
+      </a>
+
+      <!-- Hamburger menu button -->
+      <button class="menu-btn" id="menuBtn"
+              aria-label="Open navigation menu"
+              aria-controls="navLinks"
+              aria-expanded="false">
         <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <ul class="nav__links" id="navLinks">
+          <li><a class="nav__link" href="#about">About</a></li>
+          <li><a class="nav__link" href="#services">Services</a></li>
+          <li><a class="nav__link" href="#projects">Projects</a></li>
+          <li><a class="nav__link" href="#resume">Resume</a></li>
+          <li><a class="nav__link" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+          <span class="icon-btn__text" id="themeText">Dark</span>
         </button>
 
-        <nav class="nav" aria-label="Primary navigation">
-            <ul class="nav__links" id="navLinks">
-            <li><a class="nav__link" href="#about">About</a></li>
-            <li><a class="nav__link" href="#services">Services</a></li>
-            <li><a class="nav__link" href="#projects">Projects</a></li>
-            <li><a class="nav__link" href="#resume">Resume</a></li>
-            <li><a class="nav__link" href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="header__actions">
-            <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
-                <span class="icon-btn__text" id="themeText">Dark</span>
-            </button>
-            <a class="btn btn--ghost header__cta" href="assets/cv.pdf" download>Download CV</a>
-        </div>
+        <a class="btn btn--ghost header__cta" href="assets/cv.pdf" download>
+          Download CV
+        </a>
+      </div>
     </div>
   </header>
 
   <main id="main">
-    <!--HERO-->
+    <!-- HERO -->
     <section class="hero">
-        <div class="container hero__grid">
-            <div class="hero__content">
-                <p class="pill">Open to entry-level roles & internship</p>
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <p class="pill">Open to entry-level roles & internships</p>
 
-                <h1>
-                    Hi, I am<span class="accent">Blessing</span>
-                    <span class="accent" id="typingText"></span>
-                </h1>
-                <p class="lead">
-                    Entry-level Design & Web Development professional with training in Intractive Web Design (Adobe Suite), Digital Marketing, and Software Engineering. Proficient in Adobe Photoshop, Illustrator, and Canva, and Robotic Process Automation (RPA). 
-                </p>
+          <h1>
+            Hi, I’m <span class="accent">Blessing</span> —
+            <span class="accent" id="typingText"></span>
+          </h1>
+
+          <p class="lead">
+            Entry-level Design & Web professional with training in Interactive Web Design (Adobe Suite Specialist),
+            Digital Marketing, and Software Engineering. Proficient in Adobe Photoshop, Illustrator, and Canva,
+            with beginner animation skills using Adobe Animate. Building technical capability in AI for Developers
+            and Robotic Process Automation (RPA). :contentReference[oaicite:2]{index=2}
+          </p>
+
+          <div class="hero__actions">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn btn--secondary" href="#contact">Contact Me</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat">
+              <p class="stat__label">Location</p>
+              <p class="stat__value">Limerick, Ireland</p>
             </div>
+            <div class="stat">
+              <p class="stat__label">Focus</p>
+              <p class="stat__value">Design • Web • Digital</p>
+            </div>
+            <div class="stat">
+              <p class="stat__label">Tools</p>
+              <p class="stat__value">Adobe • Canva • Web Basics</p>
+            </div>
+          </div>
         </div>
+
+        <div class="hero__card">
+          <div class="profile">
+            <!-- OPTIONAL PHOTO -->
+            <!-- Put your photo in assets/profile.jpg then uncomment: -->
+            <!-- <img class="profile__img" src="assets/profile.jpg" alt="Portrait of Blessing Fortune Kwomo"> -->
+
+            <div class="profile__info">
+              <h2 class="profile__name">Blessing Fortune Kwomo</h2>
+              <p class="profile__role">Entry-Level Design & Web Professional</p>
+
+              <div class="profile__links">
+                <a href="mailto:blessingkwomo@gmail.com">blessingkwomo@gmail.com</a>
+                <a href="tel:+353870540186">087 054 0186</a>
+                <a href="https://linkedin.com/in/blessingfortune" target="_blank" rel="noopener">
+                  linkedin.com/in/blessingfortune
+                </a>
+              </div>
+
+              <div class="chips">
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">Photoshop</span>
+                <span class="chip">Illustrator</span>
+                <span class="chip">Canva</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2>About Me</h2>
+          <p>
+            I’m passionate about creating visually engaging digital content and simple, functional web experiences.
+            I enjoy learning emerging technologies such as AI for Developers and RPA. :contentReference[oaicite:3]{index=3}
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Professional Summary</h3>
+            <p class="muted">
+              I’m seeking an entry-level role or internship where I can contribute to real-world projects
+              while continuing to grow professionally.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Core Strengths</h3>
+            <ul class="list">
+              <li>Design + Content creation</li>
+              <li>Web fundamentals (HTML/CSS/JS)</li>
+              <li>Organisation and communication</li>
+              <li>Remote work readiness</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <h2>Services</h2>
+          <p>What I can support you with — design, web, and admin support.</p>
+        </div>
+
+        <div class="cards services">
+          <article class="service-card">
+            <h3>Design & Visual Content</h3>
+            <p class="muted">
+              Social media designs, flyers, posters, and clean visual assets using Canva,
+              Photoshop, and Illustrator.
+            </p>
+            <ul class="list">
+              <li>Canva content design</li>
+              <li>Photoshop editing</li>
+              <li>Illustrator vector designs</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Web Pages (Responsive)</h3>
+            <p class="muted">
+              Simple websites using HTML, CSS, and JavaScript — clean, responsive, and easy to navigate.
+            </p>
+            <ul class="list">
+              <li>Landing pages</li>
+              <li>Portfolios</li>
+              <li>Basic interactivity</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Administrative Support</h3>
+            <p class="muted">
+              Professional support for communication, scheduling, documentation, and workflow organisation.
+            </p>
+            <ul class="list">
+              <li>Email + client communication</li>
+              <li>Documentation & organisation</li>
+              <li>Meeting scheduling</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <h2>Projects</h2>
+          <p>Filter by category and explore project examples + gallery.</p>
+        </div>
+
+        <!-- FILTER BUTTONS -->
+        <div class="filters" role="tablist" aria-label="Project filters">
+          <button class="filter-btn active" data-filter="all" type="button">All</button>
+          <button class="filter-btn" data-filter="web" type="button">Web</button>
+          <button class="filter-btn" data-filter="design" type="button">Design</button>
+          <button class="filter-btn" data-filter="admin" type="button">Admin</button>
+        </div>
+
+        <!-- PROJECT CARDS -->
+        <div class="cards project-grid" id="projectGrid">
+          <article class="project-card" data-category="web">
+            <div class="project-card__top">
+              <h3>Personal Portfolio Website</h3>
+              <p class="muted">HTML • CSS • JavaScript</p>
+            </div>
+            <p class="muted">
+              A responsive portfolio with smooth scrolling, mobile navigation,
+              theme toggle, and modern layout.
+            </p>
+            <div class="project-card__actions">
+              <a class="btn btn--small" href="#contact">Work With Me</a>
+              <a class="btn btn--small btn--ghost" href="#resume">Resume</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="design">
+            <div class="project-card__top">
+              <h3>Design Collection</h3>
+              <p class="muted">Photoshop • Illustrator • Canva</p>
+            </div>
+            <p class="muted">
+              Visual designs for social content. Add real images below in the gallery.
+            </p>
+            <div class="project-card__actions">
+              <a class="btn btn--small" href="#contact">Request Samples</a>
+              <a class="btn btn--small btn--ghost" href="#services">Services</a>
+            </div>
+          </article>
+
+          <article class="project-card" data-category="admin">
+            <div class="project-card__top">
+              <h3>Workflow & Admin Support</h3>
+              <p class="muted">Organisation • Communication</p>
+            </div>
+            <p class="muted">
+              Experience supporting communication and documentation within a community organisation.
+            </p>
+            <div class="project-card__actions">
+              <a class="btn btn--small" href="#resume">See Experience</a>
+              <a class="btn btn--small btn--ghost" href="#contact">Contact</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- GALLERY -->
+        <div class="gallery-wrap">
+          <h3 class="subhead">Project Gallery</h3>
+          <p class="muted">Click an image to view it in a pop-up (modal).</p>
+
+          <div class="gallery" aria-label="Project image gallery">
+            <figure class="gallery__item">
+              <img src="assets/project-1.jpg" alt="Screenshot of project 1" loading="lazy" class="gallery-img">
+              <figcaption>Project 1</figcaption>
+            </figure>
+
+            <figure class="gallery__item">
+              <img src="assets/project-2.jpg" alt="Screenshot of project 2" loading="lazy" class="gallery-img">
+              <figcaption>Project 2</figcaption>
+            </figure>
+
+            <figure class="gallery__item">
+              <img src="assets/project-3.jpg" alt="Screenshot of project 3" loading="lazy" class="gallery-img">
+              <figcaption>Project 3</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUME -->
+    <section class="section" id="resume">
+      <div class="container">
+        <div class="section__head">
+          <h2>Resume</h2>
+          <p>Education, experience, skills, certifications, and awards.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Education</h3>
+            <ul class="list">
+              <li><strong>Interactive Web Design – Adobe Suite Specialist (QQI Level 5)</strong> — Tipperary ETB (2026)</li>
+              <li><strong>Diploma in AI/ML</strong> — Dublin Business School (2025)</li>
+              <li><strong>Diploma in Software Engineering</strong> — African Leadership University (2024)</li>
+              <li><strong>Digital Marketing – QQI Level 5</strong> — ETB Cork (2022–2023)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Certifications</h3>
+            <ul class="list">
+              <li>Remote Work Ready — Athlone ETB (2024)</li>
+              <li>Spreadsheet 6.0 (ICDL) (2023)</li>
+              <li>Certified Data Entry Specialist — AccountingHub.ng (2024)</li>
+              <li>Certified Virtual Assistant (2024)</li>
+              <li>AI for Developers — ALX (2025)</li>
+              <li>Robotic Process Automation — School of Automation, Limerick ETB (2025)</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Experience</h3>
+            <p><strong>Volunteer Administrative Officer</strong><br/>
+              Doras Liumni, Limerick (Mar 2023 – Sep 2025)</p>
+            <ul class="list">
+              <li>Managed email, phone, and in-person communication with clients and staff</li>
+              <li>Organised schedules, meetings, and documentation to improve daily workflow</li>
+              <li>Supported digital organisation and basic administrative systems</li>
+              <li>Built strong teamwork and client-facing communication skills</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Skills</h3>
+            <div class="skill-grid">
+              <div>
+                <p class="skill-title">Design & Creative</p>
+                <p class="muted">Photoshop • Illustrator • Canva • Adobe Animate (Beginner)</p>
+              </div>
+              <div>
+                <p class="skill-title">Web & Tech</p>
+                <p class="muted">Interactive Web Design fundamentals • Software Engineering foundations • AI tools • RPA basics</p>
+              </div>
+              <div>
+                <p class="skill-title">Marketing</p>
+                <p class="muted">LinkedIn & Instagram formats • Short-form writing • SEO basics • Audience engagement</p>
+              </div>
+              <div>
+                <p class="skill-title">Professional</p>
+                <p class="muted">Communication • Organisation • Time management • Teamwork • Attention to detail</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Honours & Awards</h3>
+            <ul class="list">
+              <li>University of Limerick Presidential Award — Bronze (2020), Silver (2023)</li>
+              <li>UL Student Innovation & Entrepreneur Award — Finalist (2021 – Social Impact Category)</li>
+              <li>GSEA Ireland — Semi-Finalist (2021 & 2022)</li>
+            </ul>
+          </div>
+
+          <div class="card card--highlight">
+            <h3>Capstone Projects</h3>
+            <p class="muted">
+              Add your capstone project titles here (e.g., “Interactive Web Design Capstone”).
+              When you share the names, I’ll update this section to look like a real professional resume page.
+            </p>
+          </div>
+        </div>
+
+        <div class="center">
+          <a class="btn" href="assets/cv.pdf" download>Download CV</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__head">
+          <h2>Contact</h2>
+          <p>If you’d like to work together, feel free to reach out.</p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Details</h3>
+            <p><strong>Email:</strong> <a href="mailto:blessingkwomo@gmail.com">blessingkwomo@gmail.com</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+353870540186">087 054 0186</a></p>
+            <p><strong>Location:</strong> Limerick, Ireland</p>
+            <p><strong>LinkedIn:</strong>
+              <a href="https://linkedin.com/in/blessingfortune" target="_blank" rel="noopener">
+                linkedin.com/in/blessingfortune
+              </a>
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Send a message</h3>
+
+            <form id="contactForm" class="form">
+              <label>
+                Your Name
+                <input type="text" name="name" required placeholder="e.g. Mary Joe" />
+              </label>
+
+              <label>
+                Your Email
+                <input type="email" name="email" required placeholder="e.g. mary@email.com" />
+              </label>
+
+              <label>
+                Your Message
+                <textarea name="message" required placeholder="Write your message..."></textarea>
+              </label>
+
+              <button class="btn" type="submit">Send Message</button>
+              <p class="form__note" id="formNote" aria-live="polite"></p>
+            </form>
+
+            <p class="muted small">
+              This form is a front-end demo. Later we can connect it to a real backend or email service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Blessing Fortune Kwomo. All rights reserved.</p>
+      <a href="#top" class="footer__link">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Floating back-to-top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- MODAL for gallery image pop-up -->
+  <div class="modal" id="imgModal" aria-hidden="true" role="dialog" aria-label="Image preview modal">
+    <div class="modal__content">
+      <button class="modal__close" id="modalClose" aria-label="Close modal">✕</button>
+      <img id="modalImage" src="" alt="Expanded project image">
+      <p class="muted small" id="modalCaption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-    
-       
+</html>
