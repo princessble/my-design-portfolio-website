@@ -49,7 +49,7 @@ if (form) {
       return;
     }
 
-    note.textContent = "✅ Message sent (demo). I’ll get back to you soon!";
+    note.textContent = "✅ Message sent!. I’ll get back to you soon!";
     form.reset();
   });
 }
